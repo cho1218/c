@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define LADDER_H	14	// °¡·ÎÁÙ
-#define LADDER_V	9	// ¼¼·ÎÁÙ
-#define MAX_H		6	// ÃÖ´ë °¡·Î °³¼ö
-#define MIN_H_SUM	15	// ÃÖ¼Ò 15°³ ÀÌ»ó
-#define PLAYER		5	// ÇÃ·¹ÀÌ¾î ¼ö
+#define LADDER_H	14	// ê°€ë¡œì¤„
+#define LADDER_V	9	// ì„¸ë¡œì¤„
+#define MAX_H		6	// ìµœëŒ€ ê°€ë¡œ ê°œìˆ˜
+#define MIN_H_SUM	15	// ìµœì†Œ 15ê°œ ì´ìƒ
+#define PLAYER		5	// í”Œë ˆì´ì–´ ìˆ˜
 
 int main() {
 	int result[PLAYER][PLAYER] = { 0, };
@@ -21,32 +21,32 @@ int main() {
 		int interval = 1;
 		int ladderSum = 0;
 
-		// ´Ù¼¸ °³ÀÇ »ç´Ù¸® ±×¸®±â À§ÇØ ÃÑ 4¹ø ¹İº¹
+		// ë‹¤ì„¯ ê°œì˜ ì‚¬ë‹¤ë¦¬ ê·¸ë¦¬ê¸° ìœ„í•´ ì´ 4ë²ˆ ë°˜ë³µ
 		while (interval < (PLAYER * 2 - 1)) {
-			ladderCnt = rand() % 3 + 3;		// »ç´Ù¸® °³¼ö´Â ¹«Á¶°Ç 3 ÀÌ»ó 5 ÀÌÇÏ
+			ladderCnt = rand() % 3 + 3;		// ì‚¬ë‹¤ë¦¬ ê°œìˆ˜ëŠ” ë¬´ì¡°ê±´ 3 ì´ìƒ 5 ì´í•˜
 			ladderSum += ladderCnt;
 
-			if (interval == 7 && ladderSum + 3 < MIN_H_SUM) {	// ÃÑ »ç´Ù¸® °³¼ö 15°³ ÀÌ»ó
+			if (interval == 7 && ladderSum + 3 < MIN_H_SUM) {	// ì´ ì‚¬ë‹¤ë¦¬ ê°œìˆ˜ 15ê°œ ì´ìƒ
 				ladderCnt = MIN_H_SUM - ladderSum;
 			}
 
 			for (int i = 0; i < ladderCnt; i++)
 			{
-				int temp = rand() % (LADDER_H - 1);		// °¡·Î¼±ÀÌ µé¾î°¥ ÀÎµ¦½º »ı¼º
+				int temp = rand() % (LADDER_H - 1);		// ê°€ë¡œì„ ì´ ë“¤ì–´ê°ˆ ì¸ë±ìŠ¤ ìƒì„±
 
-				// 1 ÀÌÇÏ Â÷ÀÌ È®ÀÎ
+				// 1 ì´í•˜ ì°¨ì´ í™•ì¸
 				for (int j = 0; j < i; j++) {
-					if (ladderCnt >= 6 && i >= ladderCnt - 2) continue;		// °¡·Î¼±ÀÌ 6°³, Áï ±× ÀÌ»óÀÏ °æ¿ì ¸¶Áö¸·¿¡ ¹èÁ¤µÇ´Â »ç´Ù¸®´Â ¿¬¼Ó Çã¿ë
-					else if (ladderCnt == 5 && i >= ladderCnt - 1) continue;	// °¡·Î¼±ÀÌ 5°³ÀÏ °æ¿ì ¸¶Áö¸·¿¡ ¹èÁ¤µÇ´Â »ç´Ù¸®´Â ¿¬¼Ó Çã¿ë
+					if (ladderCnt >= 6 && i >= ladderCnt - 2) continue;		// ê°€ë¡œì„ ì´ 6ê°œ, ì¦‰ ê·¸ ì´ìƒì¼ ê²½ìš° ë§ˆì§€ë§‰ì— ë°°ì •ë˜ëŠ” ì‚¬ë‹¤ë¦¬ëŠ” ì—°ì† í—ˆìš©
+					else if (ladderCnt == 5 && i >= ladderCnt - 1) continue;	// ê°€ë¡œì„ ì´ 5ê°œì¼ ê²½ìš° ë§ˆì§€ë§‰ì— ë°°ì •ë˜ëŠ” ì‚¬ë‹¤ë¦¬ëŠ” ì—°ì† í—ˆìš©
 
 					if (temp == ladderIdx[j] || temp + 1 == ladderIdx[j] || temp - 1 == ladderIdx[j]) {
 						flag++;
 						break;
 					}
 				}
-				if (interval > 1 && ladder[interval - 2][temp] == 1) flag++;	// ¿· »ç´Ù¸®¿Í Áßº¹ È®ÀÎ
+				if (interval > 1 && ladder[interval - 2][temp] == 1) flag++;	// ì˜† ì‚¬ë‹¤ë¦¬ì™€ ì¤‘ë³µ í™•ì¸
 
-				// Áßº¹ÀÌ ÀÖ´Ù¸é ÀÎµ¦½º -1ÇÏ°í ´Ù½Ã »Ì±â
+				// ì¤‘ë³µì´ ìˆë‹¤ë©´ ì¸ë±ìŠ¤ -1í•˜ê³  ë‹¤ì‹œ ë½‘ê¸°
 				if (flag != 0) i--;
 				else ladderIdx[i] = temp;
 
@@ -58,14 +58,14 @@ int main() {
 			//	printf("%d ", ladderIdx[i]);
 			//printf("\n");
 
-			// »ç´Ù¸® ¹èÁ¤
+			// ì‚¬ë‹¤ë¦¬ ë°°ì •
 			for (int i = 0; i < ladderCnt; i++)
 				ladder[interval][ladderIdx[i]] = 1;
 
 			interval += 2;
 		}
 
-		// °á°ú°ª Ãâ·Â
+		// ê²°ê³¼ê°’ ì¶œë ¥
 		printf("\n");
 		printf("1 2 3 4 5\n");
 		for (int i = 0; i < LADDER_H; i++) {
@@ -86,38 +86,38 @@ int main() {
 		int move[2] = { 0, 0 };
 
 		for (int i = 0; i < PLAYER; i++) {
-			pos = i;	// »ç´Ù¸®ÀÇ ÀÎµ¦½º¸¦ ÇöÀç À§Ä¡ÀÇ ÀÎµ¦½º·Î ¹Ù²ã¼­ ¿ì¼± ÀúÀå
+			pos = i;	// ì‚¬ë‹¤ë¦¬ì˜ ì¸ë±ìŠ¤ë¥¼ í˜„ì¬ ìœ„ì¹˜ì˜ ì¸ë±ìŠ¤ë¡œ ë°”ê¿”ì„œ ìš°ì„  ì €ì¥
 			move[0] = i * 2;
 			move[1] = 0;
 			while (move[1] != LADDER_H - 1) {
-				if (move[0] == 0) {		// ÇöÀç À§Ä¡°¡ ¸Ç ¿ŞÂÊ »ç´Ù¸®ÀÎ °æ¿ì
+				if (move[0] == 0) {		// í˜„ì¬ ìœ„ì¹˜ê°€ ë§¨ ì™¼ìª½ ì‚¬ë‹¤ë¦¬ì¸ ê²½ìš°
 					if (ladder[1][move[1]] == 1) {
 						move[0] += 2;
 						move[1] += 1;
 					}
 					else move[1] += 1;
 				}
-				else if (move[0] == (PLAYER * 2) - 2) {	// ÇöÀç À§Ä¡°¡ ¸Ç ¿À¸¥ÂÊ »ç´Ù¸®ÀÎ °æ¿ì
+				else if (move[0] == (PLAYER * 2) - 2) {	// í˜„ì¬ ìœ„ì¹˜ê°€ ë§¨ ì˜¤ë¥¸ìª½ ì‚¬ë‹¤ë¦¬ì¸ ê²½ìš°
 					if (ladder[move[0] - 1][move[1]] == 1) {
 						move[0] -= 2;
 						move[1] += 1;
 					}
 					else move[1] += 1;
 				}
-				else {	// Áß°£ »ç´Ù¸®ÀÎ °æ¿ì
-					if (ladder[move[0] + 1][move[1]] == 1) {	// ¿À¸¥ÂÊ¿¡ »ç´Ù¸®°¡ ÀÖ´Â °æ¿ì
+				else {	// ì¤‘ê°„ ì‚¬ë‹¤ë¦¬ì¸ ê²½ìš°
+					if (ladder[move[0] + 1][move[1]] == 1) {	// ì˜¤ë¥¸ìª½ì— ì‚¬ë‹¤ë¦¬ê°€ ìˆëŠ” ê²½ìš°
 						move[0] += 2;
 						move[1] += 1;
 					}
-					else if (ladder[move[0] - 1][move[1]] == 1) {	// ¿ŞÂÊ¿¡ »ç´Ù¸®°¡ ÀÖ´Â °æ¿ì
+					else if (ladder[move[0] - 1][move[1]] == 1) {	// ì™¼ìª½ì— ì‚¬ë‹¤ë¦¬ê°€ ìˆëŠ” ê²½ìš°
 						move[0] -= 2;
 						move[1] += 1;
 					}
-					else move[1] += 1;		// ¾Æ¹«°Íµµ ¾ø´Â °æ¿ì
+					else move[1] += 1;		// ì•„ë¬´ê²ƒë„ ì—†ëŠ” ê²½ìš°
 				}
 			}
 
-			switch (move[0])	// ¸¶Áö¸·À¸·Î ¸ØÃá À§Ä¡
+			switch (move[0])	// ë§ˆì§€ë§‰ìœ¼ë¡œ ë©ˆì¶˜ ìœ„ì¹˜
 			{
 			case 0:
 				result[pos][0] += 1;
@@ -140,7 +140,7 @@ int main() {
 			}
 		}
 
-		// ´©°è Ãâ·Â
+		// ëˆ„ê³„ ì¶œë ¥
 		for (int i = 0; i < PLAYER; i++) {
 			printf("%d : ", i + 1);
 			for (int j = 0; j < PLAYER; j++)
