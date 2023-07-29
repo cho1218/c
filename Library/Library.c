@@ -33,19 +33,19 @@ void showStatus();
 void updateStatus(int bidx, int midx);
 
 
-Member mymem[100] = { { "È«±æµ¿", "01012345678", 19990101 }, { "ÀÌ¼ø½Å", "01013572468", 19950227 },
-                        { "°­°¨Âù", "01011223344", 19970314 }, { "±è¼¼Á¾", "01098765432", 20021009 },
-                        { "Àå¿µ½Ç", "01011111111", 20000722 } , { 0, 0, 0 } };
+Member mymem[100] = { { "í™ê¸¸ë™", "01012345678", 19990101 }, { "ì´ìˆœì‹ ", "01013572468", 19950227 },
+                        { "ê°•ê°ì°¬", "01011223344", 19970314 }, { "ê¹€ì„¸ì¢…", "01098765432", 20021009 },
+                        { "ì¥ì˜ì‹¤", "01011111111", 20000722 } , { 0, 0, 0 } };
 
-Book mybook[100] = { { "Æ®·»µå ÄÚ¸®¾Æ 2022", "±è³­µµ, ÀÌÁØ¿µ ¿Ü", "¹Ì·¡ÀÇÃ¢", 0 }, { "°Å²Ù·Î ÀĞ´Â ¼¼°è»ç", "À¯½Ã¹Î", "µ¹º£°³", 1 },
-                    { "±×³É ÇÏÁö ¸»¶ó", "¼Û±æ¿µ", "ºÏ½ºÅæ", 0 }, { "´Ş·¯±¸Æ® ²Ş ¹éÈ­Á¡ 2", "ÀÌ¹Ì¿¹", "ÆÑÅä¸®³ªÀÎ", 0 },
-                    { "4~7¼¼º¸´Ù Áß¿äÇÑ ½Ã±â´Â ¾ø½À´Ï´Ù", "ÀÌÀÓ¼÷", "Ä«½Ã¿ÀÆä¾Æ", 0 }, { "ÁÖ½ÄÅõÀÚ Àı´ë¿øÄ¢", "¹Ú¿µ¿Á", "¼¾½Ã¿À", 0 },
-                    { "ÇŞºûÀº Âù¶õÇÏ°í ÀÎ»ıÀº ±ÍÇÏ´Ï±î¿ä", "Àå¸í¼÷", "±è¿µ»ç", 0 }, { "ÀÎ»ıÀº ½ÇÀüÀÌ´Ù", "½Å¿µÁØ, ÁÖ¾ğ±Ô", "»ó»ó½ºÄù¾î", 0 },
-                    { "µ·, ¶ß°Ì°Ô »ç¶ûÇÏ°í Â÷°©°Ô ´Ù·ç¾î¶ó", "¾Óµå·¹ ÄÚ½ºÅç¶ó´Ï", "¹Ì·¡ÀÇÃ¢", 0 },
-                    { "¿À´Ã ¹ã, ¼¼°è¿¡¼­ ÀÌ »ç¶ûÀÌ »ç¶óÁø´Ù ÇØµµ", "ÀÌÄ¡Á¶ ¹Ì»çÅ° / ±Ç¿µÁÖ ¿ª", "¸ğ¸ğ", 0 }, { 0, 0, 0, 0} };
+Book mybook[100] = { { "íŠ¸ë Œë“œ ì½”ë¦¬ì•„ 2022", "ê¹€ë‚œë„, ì´ì¤€ì˜ ì™¸", "ë¯¸ë˜ì˜ì°½", 0 }, { "ê±°ê¾¸ë¡œ ì½ëŠ” ì„¸ê³„ì‚¬", "ìœ ì‹œë¯¼", "ëŒë² ê°œ", 1 },
+                    { "ê·¸ëƒ¥ í•˜ì§€ ë§ë¼", "ì†¡ê¸¸ì˜", "ë¶ìŠ¤í†¤", 0 }, { "ë‹¬ëŸ¬êµ¬íŠ¸ ê¿ˆ ë°±í™”ì  2", "ì´ë¯¸ì˜ˆ", "íŒ©í† ë¦¬ë‚˜ì¸", 0 },
+                    { "4~7ì„¸ë³´ë‹¤ ì¤‘ìš”í•œ ì‹œê¸°ëŠ” ì—†ìŠµë‹ˆë‹¤", "ì´ì„ìˆ™", "ì¹´ì‹œì˜¤í˜ì•„", 0 }, { "ì£¼ì‹íˆ¬ì ì ˆëŒ€ì›ì¹™", "ë°•ì˜ì˜¥", "ì„¼ì‹œì˜¤", 0 },
+                    { "í–‡ë¹›ì€ ì°¬ë€í•˜ê³  ì¸ìƒì€ ê·€í•˜ë‹ˆê¹Œìš”", "ì¥ëª…ìˆ™", "ê¹€ì˜ì‚¬", 0 }, { "ì¸ìƒì€ ì‹¤ì „ì´ë‹¤", "ì‹ ì˜ì¤€, ì£¼ì–¸ê·œ", "ìƒìƒìŠ¤í€˜ì–´", 0 },
+                    { "ëˆ, ëœ¨ê²ê²Œ ì‚¬ë‘í•˜ê³  ì°¨ê°‘ê²Œ ë‹¤ë£¨ì–´ë¼", "ì•™ë“œë ˆ ì½”ìŠ¤í†¨ë¼ë‹ˆ", "ë¯¸ë˜ì˜ì°½", 0 },
+                    { "ì˜¤ëŠ˜ ë°¤, ì„¸ê³„ì—ì„œ ì´ ì‚¬ë‘ì´ ì‚¬ë¼ì§„ë‹¤ í•´ë„", "ì´ì¹˜ì¡° ë¯¸ì‚¬í‚¤ / ê¶Œì˜ì£¼ ì—­", "ëª¨ëª¨", 0 }, { 0, 0, 0, 0} };
 
-Status mystatus[50] = { {{"ÀÌ¼ø½Å", "01013572468", 19950227 }, { "±×³É ÇÏÁö ¸»¶ó", "¼Û±æ¿µ", "ºÏ½ºÅæ", 1 }, 20211030, 20211103, 1}, 
-                        {{"°­°¨Âù", "01011223344", 19970314 }, { "°Å²Ù·Î ÀĞ´Â ¼¼°è»ç", "À¯½Ã¹Î", "µ¹º£°³", 1 }, 20211101, 0, 0},
+Status mystatus[50] = { {{"ì´ìˆœì‹ ", "01013572468", 19950227 }, { "ê·¸ëƒ¥ í•˜ì§€ ë§ë¼", "ì†¡ê¸¸ì˜", "ë¶ìŠ¤í†¤", 1 }, 20211030, 20211103, 1}, 
+                        {{"ê°•ê°ì°¬", "01011223344", 19970314 }, { "ê±°ê¾¸ë¡œ ì½ëŠ” ì„¸ê³„ì‚¬", "ìœ ì‹œë¯¼", "ëŒë² ê°œ", 1 }, 20211101, 0, 0},
                         {{0, 0, 0}, { 0, 0, 0, 0 }, 0, 0, 0}, };
 
 
@@ -54,13 +54,13 @@ int main()
     while (1) 
     {
         int input = 0;
-        printf("¢¾ µµ¼­ °ü¸® ½Ã½ºÅÛ ¢¾\n");
-        printf("1. º¸À¯ µµ¼­ ¸ñ·Ï Ãâ·Â\n");
-        printf("2. ´ëÃâÇÏ±â\n");
-        printf("3. ¹İ³³ÇÏ±â\n");
-        printf("4. ´ëÃâ ÇöÈ² Ãâ·Â\n");
-        printf("5. Á¾·á\n\n");
-        printf("-> ¿øÇÏ½Ã´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä (¼ıÀÚ ÀÔ·Â) : ");
+        printf("â™¥ ë„ì„œ ê´€ë¦¬ ì‹œìŠ¤í…œ â™¥\n");
+        printf("1. ë³´ìœ  ë„ì„œ ëª©ë¡ ì¶œë ¥\n");
+        printf("2. ëŒ€ì¶œí•˜ê¸°\n");
+        printf("3. ë°˜ë‚©í•˜ê¸°\n");
+        printf("4. ëŒ€ì¶œ í˜„í™© ì¶œë ¥\n");
+        printf("5. ì¢…ë£Œ\n\n");
+        printf("-> ì›í•˜ì‹œëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” (ìˆ«ì ì…ë ¥) : ");
 
         scanf("%d", &input);
 
@@ -79,10 +79,10 @@ int main()
             showStatus();
             break;
         case 5:
-            printf("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.\n\n");
+            printf("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n\n");
             exit(0);
         default:
-            printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.\n\n");
+            printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.\n\n");
             break;
         }
     }
@@ -95,12 +95,12 @@ void showBookList()
     {
         if (!mybook[i].b_title[0]) break;
 
-        printf("- %s ¡Ü %s ¡Ü %s ¡Ü ", mybook[i].b_title, mybook[i].b_writer, mybook[i].b_publish);
+        printf("- %s â— %s â— %s â— ", mybook[i].b_title, mybook[i].b_writer, mybook[i].b_publish);
 
         if (mybook[i].b_chkout)
-            printf("´ëÃâÁß\n");
+            printf("ëŒ€ì¶œì¤‘\n");
         else
-            printf("º¸À¯\n");
+            printf("ë³´ìœ \n");
     }
     printf("\n\n");
 }
@@ -113,7 +113,7 @@ void chkoutB()
     int findbook = 0;
     int idx = 0, num = 1;
 
-    printf("´ëÃâÇÒ µµ¼­¸¦ °Ë»öÇÏ¼¼¿ä. : ");
+    printf("ëŒ€ì¶œí•  ë„ì„œë¥¼ ê²€ìƒ‰í•˜ì„¸ìš”. : ");
     getchar();
     fgets(search, sizeof(char) * 50, stdin);
 
@@ -129,33 +129,33 @@ void chkoutB()
         if (strstr(mybook[i].b_title, search)) {
             findlist[idx] = i;
             
-            printf("%d. %s ¡Ü %s ¡Ü %s ¡Ü ", idx + 1, mybook[i].b_title, mybook[i].b_writer, mybook[i].b_publish);
+            printf("%d. %s â— %s â— %s â— ", idx + 1, mybook[i].b_title, mybook[i].b_writer, mybook[i].b_publish);
 
             if (mybook[i].b_chkout)
-                printf("´ëÃâÁß\n");
+                printf("ëŒ€ì¶œì¤‘\n");
             else
-                printf("º¸À¯\n");
+                printf("ë³´ìœ \n");
 
             idx++;
         }
     }
 
     while (1) {
-        printf("\n ´ëÃâÇÒ µµ¼­ÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. : ");
+        printf("\n ëŒ€ì¶œí•  ë„ì„œì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”. : ");
         scanf("%d", &num);
 
         if (num > idx || mybook[findlist[num - 1]].b_chkout) {
-            printf("´ëÃâÇÒ ¼ö ¾ø´Â µµ¼­ÀÔ´Ï´Ù.\n");
+            printf("ëŒ€ì¶œí•  ìˆ˜ ì—†ëŠ” ë„ì„œì…ë‹ˆë‹¤.\n");
             return;
         }
         else break;
     }
-    findbook = findlist[num - 1];       // mybookÀÇ ÀÎµ¦½º ÀúÀå
+    findbook = findlist[num - 1];       // mybookì˜ ì¸ë±ìŠ¤ ì €ì¥
 
     printf("\n");
 
     getchar();
-    printf("¼ºÇÔÀ» ÀÔ·ÂÇÏ¼¼¿ä. : ");
+    printf("ì„±í•¨ì„ ì…ë ¥í•˜ì„¸ìš”. : ");
     fgets(name, sizeof(char) * 20, stdin);
 
     if (name[strlen(name) - 1] == '\n')
@@ -164,13 +164,13 @@ void chkoutB()
     for (int i = 0; i < 100; i++)
     {
         if (!mymem[i].m_name[0]) {
-            printf("Á¸ÀçÇÏÁö ¾Ê´Â È¸¿øÀÔ´Ï´Ù.\n\n");
+            printf("ì¡´ì¬í•˜ì§€ ì•ŠëŠ” íšŒì›ì…ë‹ˆë‹¤.\n\n");
             break;
         }
 
         if (!strcmp(mymem[i].m_name, name)) {
             updateStatus(findbook, i);
-            printf("´ëÃâÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n\n");
+            printf("ëŒ€ì¶œì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n\n");
             break;
         }
     }
@@ -185,7 +185,7 @@ void returnB()
     int idx = 0, num = 1;
 
     getchar();
-    printf("¼ºÇÔÀ» ÀÔ·ÂÇÏ¼¼¿ä. : ");
+    printf("ì„±í•¨ì„ ì…ë ¥í•˜ì„¸ìš”. : ");
     fgets(name, sizeof(char) * 20, stdin);
 
     if (name[strlen(name) - 1] == '\n')
@@ -194,24 +194,24 @@ void returnB()
     for (int i = 0; i < 50; i++)
     {
         if (!mystatus[i].s_book.b_title[0] && !chkoutlist[0] && !chkoutlist[1]) {
-            printf("´ëÃâ¸ñ·ÏÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n\n");
+            printf("ëŒ€ì¶œëª©ë¡ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n\n");
             break;
         }
 
         if (!strcmp(mystatus[i].s_member.m_name, name) && !mystatus[i].s_isret) {
             chkoutlist[idx] = i;
-            printf("%d. %s ¡Ü %s ¡Ü %s\n", idx + 1, mystatus[i].s_book.b_title,
+            printf("%d. %s â— %s â— %s\n", idx + 1, mystatus[i].s_book.b_title,
                         mystatus[i].s_book.b_writer, mystatus[i].s_book.b_publish);
             idx++;
         }
     }
 
     while (1) {
-        printf("\n ¹İ³³ÇÒ µµ¼­ÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. : ");
+        printf("\n ë°˜ë‚©í•  ë„ì„œì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”. : ");
         scanf("%d", &num);
 
         if (num > idx || mystatus[chkoutlist[num - 1]].s_isret)
-            printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.\n");
+            printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.\n");
         else break;
     }
 
@@ -227,7 +227,7 @@ void returnB()
             mybook[i].b_chkout = 0;
         }
     }
-    printf("¹İ³³ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n\n");
+    printf("ë°˜ë‚©ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n\n");
     //showStatus();
 }
 
@@ -237,13 +237,13 @@ void showStatus()
     {
         if (!mystatus[i].s_chkoutDate) break;
 
-        printf("- %s ¡Ü %s(%s) ¡Ü %d ", mystatus[i].s_book.b_title, mystatus[i].s_member.m_name,
+        printf("- %s â— %s(%s) â— %d ", mystatus[i].s_book.b_title, mystatus[i].s_member.m_name,
                                         mystatus[i].s_member.m_tel, mystatus[i].s_chkoutDate);
 
         if (!mystatus[i].s_isret)
-            printf("¡Ü ´ëÃâÁß\n");
+            printf("â— ëŒ€ì¶œì¤‘\n");
         else
-            printf("¡Ü %d\n", mystatus[i].s_retDate);
+            printf("â— %d\n", mystatus[i].s_retDate);
     }
     printf("\n\n");
 }
